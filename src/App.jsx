@@ -1,13 +1,19 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import StepperComponent from "./components/Stepper";
+import { createTheme, ThemeProvider, styled } from "@mui/material/styles";
+import { orange } from "@mui/material/colors";
+
+const theme = createTheme({
+  status: {
+    danger: orange[500],
+  },
+});
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <h1>Ralu</h1>
-  )
+    <ThemeProvider theme={theme}>
+      <StepperComponent />
+    </ThemeProvider>
+  );
 }
 
-export default App
+export default App;
